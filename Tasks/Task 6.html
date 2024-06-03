@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 6</title>
+
+    <style>
+        input[type="button"]
+        {
+            margin:10px;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="num 1" onclick="onclickFunction_num1()">
+    <input type="button" value="num 2" onclick="onclickFunction_num2()">
+    <input type="button" value="num 3" onclick="onclickFunction_num3()">
+    <input type="button" value="num 4" onclick="onclickFunction_num4()">
+    <input type="button" value="num 5" onclick="onclickFunction_num5()">
+</body>
+</html>
+<script>
+    const arr=[];
+    for(let i=0;i<101;i++)
+    {
+        arr[i]=i;
+    }
+
+    function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+          let j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+    
+    onclickFunction_num1 = () => {
+        console.log('button one clicked');
+        let arrNew=[];
+
+        let count=0;
+        for(let i=0;i<101;i++)
+        {
+            if(arr[i]%3==0) continue;
+            arrNew[count++]=arr[i];
+        }
+        console.log(arrNew);
+    }
+
+    onclickFunction_num2 = () => {
+        console.log('button two clicked');
+        let arrNew=[];
+        let arrTemp=[];
+        let count =0;
+
+        for(let i=101;i<151;i++)
+        {
+            arrTemp[count++]=i;
+        }
+
+        //concatenation using built in method
+        arrNew=arr.concat(arrTemp);
+
+        console.log(arrNew);
+    }
+    onclickFunction_num3 = () => {
+        console.log('button three clicked');
+        let arrNew=[];
+        
+        for(let i=0;i<101;i++)
+        {
+            arrNew[i]=arr[i]+3;
+        }
+
+        console.log(arrNew);
+    }
+    onclickFunction_num4 = () => {
+        console.log('button four clicked');
+        for(let i=20;i<41;i++)
+        {
+            console.log(arr[i]);
+        }
+    }
+    onclickFunction_num5 = () => {
+        console.log('button five clicked');
+        
+        let arrNew=arr;
+        shuffleArray(arrNew);
+        console.log('shuffled array:');
+        console.log(arrNew);
+
+        console.log('descending order array:');
+        arrNew.sort();
+        arrNew.reverse();
+        console.log(arrNew);
+    }
+</script>
