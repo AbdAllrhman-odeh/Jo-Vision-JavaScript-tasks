@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="Click me" onclick="onclickFunction()">
+    <div id="sum">
+
+    </div>
+    <div id="arrayEven">
+
+    </div>
+
+    <script>
+        onclickFunction = () => {
+            let sum=0;
+            let arr=[];
+            let arrEven=[];
+
+            for(let i=0;i<101;i++)
+            {
+                arr[i]=i;
+            }
+            let text="";
+        for(let i=0;i<101;i++)
+        {
+            if(i%2==0)
+            {
+                sum+=i;
+                arrEven[i]=i;
+                text=text + "Number is " + arrEven[i] + "<br>";
+            }
+        }
+
+        document.getElementById('sum').innerText=sum;
+        document.getElementById('arrayEven').innerHTML=text;
+        }
+
+
+
+
+    </script>
+</body>
+</html>
