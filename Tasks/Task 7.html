@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="time">
+        Time : 
+    </h1>
+</body>
+</html>
+<script>
+
+setInterval(updateTime,1000);
+
+    function getTime() {
+        let time = new Date();
+        // console.log(time);
+        let hours = (time.getHours());
+        let minutes = (time.getMinutes());
+        let seconds = (time.getSeconds());
+        
+        let result=hours+':'+minutes+':'+seconds;
+        return result;
+    }   
+
+    function updateTime() {
+        let time=getTime();
+        document.getElementById('time').innerText=time;
+    }
+    
+
+
+</script>
